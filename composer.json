@@ -1,0 +1,18 @@
+{
+  "name": "db1-fpp/laravel-elasticache",
+  "description": "Add new cache and session driver to use AWS ElastiCache with auto discovery",
+  "keywords": ["laravel", "aws","amazon", "cache", "elasticache"],
+  "minimum-stability": "dev",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "DB1 Global Software",
+      "email": "rafael.labegalini@db1.com.br"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Db1Fpp\\": "src/"
+    }
+  }
+}
