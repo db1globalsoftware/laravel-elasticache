@@ -26,11 +26,13 @@ class MemcachedFactory
         }
 
         // verifica se é modo dinâmico
-        if ($elasticacheConfig['mode'] == 'dynamic' && !$amazonExtensionOK) {
-            throw new ExtensionNotLoadedException('You tried to use dynamic mode but the Amazon Memcached extension is 
+        if ($elasticacheConfig['mode'] == 'dynamic') {
+            if (!$amazonExtensionOK) {
+                throw new ExtensionNotLoadedException('You tried to use dynamic mode but the Amazon Memcached extension is 
                 not loaded. Do you really installed the Amazon memcached extension for PHP?');
-        } else {
-            $memcached->setOption(\Memcached::OPT_CLIENT_MODE, \Memcached::DYNAMIC_CLIENT_MODE);
+            } else {
+                $memcached->setOption(\Memcached::OPT_CLIENT_MODE, \Memcached::DYNAMIC_CLIENT_MODE);
+            }
         }
 
         /*
