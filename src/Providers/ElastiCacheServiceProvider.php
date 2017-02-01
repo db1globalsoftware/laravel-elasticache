@@ -50,6 +50,6 @@ class ElastiCacheServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // TODO: Implement register() method.
+
     }
 }
