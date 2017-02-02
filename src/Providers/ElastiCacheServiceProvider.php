@@ -11,7 +11,6 @@ use Illuminate\Session\CacheBasedSessionHandler;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\ServiceProvider;
-use Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler;
 
 class ElastiCacheServiceProvider extends ServiceProvider
 {
