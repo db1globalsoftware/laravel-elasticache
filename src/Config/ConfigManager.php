@@ -27,7 +27,7 @@ class ConfigManager
      */
     public function get($connection)
     {
-        $connections = $this->config->get('cache.elasticache.connections');
+        $connections = $this->config->get('cache.elasticache');
         if (!array_key_exists($connection, $connections)) {
             throw new ConnectionNotFoundException('The connection "'.$connection.'" 
                 dosen\'t existis in connections list');

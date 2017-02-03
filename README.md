@@ -42,26 +42,23 @@ de configuração de cache do laravel.
     //... others cache config
     
     'elasticache' => [
-    
-        'connections' => [
-            'default' => [
-                'mode'  => env('MEMCACHED_CACHE_MODE', 'dynamic'),
-                'nodes' => [
-                    [
-                        'host'   => env('MEMCACHED_CACHE_HOST', '127.0.0.1'),
-                        'port'   => env('MEMCACHED_CACHE_PORT', 11211),
-                        'weight' => env('MEMCACHED_CACHE_WEIGHT', 100)
-                    ]
+        'default' => [
+            'mode'  => env('MEMCACHED_CACHE_MODE', 'dynamic'),
+            'nodes' => [
+                [
+                    'host'   => env('MEMCACHED_CACHE_HOST', '127.0.0.1'),
+                    'port'   => env('MEMCACHED_CACHE_PORT', 11211),
+                    'weight' => env('MEMCACHED_CACHE_WEIGHT', 100)
                 ]
-            ],
-            'sessions' => [
-                'mode'  => env('MEMCACHED_SESSION_MODE', 'dynamic'),
-                'nodes' => [
-                    [
-                        'host'   => env('MEMCACHED_SESSION_HOST', '127.0.0.1'),
-                        'port'   => env('MEMCACHED_SESSION_PORT', 11211),
-                        'weight' => env('MEMCACHED_SESSION_WEIGHT', 100)
-                    ]
+            ]
+        ],
+        'sessions' => [
+            'mode'  => env('MEMCACHED_SESSION_MODE', 'dynamic'),
+            'nodes' => [
+                [
+                    'host'   => env('MEMCACHED_SESSION_HOST', '127.0.0.1'),
+                    'port'   => env('MEMCACHED_SESSION_PORT', 11211),
+                    'weight' => env('MEMCACHED_SESSION_WEIGHT', 100)
                 ]
             ]
         ]
@@ -110,5 +107,5 @@ diferente do que é utilizado para armazenamento do cache.
  
  // ...other sessions configs here
  
- 'elasticache_connection' => 'session'
+ 'elasticache_connection' => 'sessions'
 ```
