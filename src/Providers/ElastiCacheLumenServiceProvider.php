@@ -7,7 +7,6 @@ use Db1Fpp\Config\ConfigManager;
 use Db1Fpp\Factories\MemcachedFactory;
 use Illuminate\Cache\MemcachedStore;
 use Illuminate\Cache\Repository;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,7 +23,7 @@ class ElastiCacheLumenServiceProvider extends ServiceProvider
         $config        = $this->app->make('config');
         $configManager = new ConfigManager($config);
 
-        Cache::extend('elasticache', function (Application $app, $driverConfig) use ($configManager, $config) {
+        Cache::extend('elasticache', function ($app, $driverConfig) use ($configManager, $config) {
             $elasticacheConfig = $configManager->get($driverConfig['connection']);
             $memcachedInstance = MemcachedFactory::factory($elasticacheConfig);
 
