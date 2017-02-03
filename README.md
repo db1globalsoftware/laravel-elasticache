@@ -23,6 +23,12 @@ localizado no arquivo `config/app.php`
 Db1Fpp\Providers\ElastiCacheServiceProvider::class
 ```
 
+Ou com Lumen
+
+```php
+$app->register(Db1Fpp\Providers\ElastiCacheLumenServiceProvider::class);
+```
+
 ### Configuração
 
 O primeiro passo é adicionar a lista de servidores do Elasticache
