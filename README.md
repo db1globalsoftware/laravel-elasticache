@@ -109,3 +109,7 @@ diferente do que é utilizado para armazenamento do cache.
  
  'elasticache_connection' => 'sessions'
 ```
+
+### License
+
+[MIT](http://opensource.org/licenses/MIT)
